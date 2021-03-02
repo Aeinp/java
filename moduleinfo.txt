@@ -1,0 +1,4 @@
+module Lab{
+	requires java.desktop;
+	requires java.logging;
+	}
