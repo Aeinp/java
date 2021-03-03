@@ -4,30 +4,24 @@ import java.util.*;
 
 public class Aten {
 	public static void main(String[] args) {
-		int r,k=0,cnt=0,cnt1=0;
-		Scanner rd=new Scanner(System.in);
-		System.out.print("enter value");
-		r=rd.nextInt();
-		for(int i=1;i<=r;i++) {
-			for(int j=1;j<=r-i;j++) {
+		Scanner in=new Scanner(System.in);
+		System.out.print("Enter the number of levels for the number pyramid : ");
+		int levels=in.nextInt();
+		for(int row=1;row<levels+1;row++)
+		{
+			for(int space=row;space<levels;space++)
+			{
 				System.out.print("  ");
-				cnt++;
 			}
-			while(k!=2*i-1) {
-				if(cnt<=r-1) {
-					System.out.print((i+k)+" ");
-					cnt++;
-				}
-				else {
-					cnt1++;
-					System.out.print((i+k-2*cnt1)+" ");
-					}
-			
-			k++;
+			for(int col=row;col<=2*row-1;col++)
+			{
+				System.out.print(col+" ");
+			}
+			for(int k=2*row-2;k>=row;k--)
+			{
+				System.out.print(k+" ");
+			}
+			System.out.println();
 		}
-		cnt1=cnt=k=0;
-		System.out.println(" ");
 	}
-
-}
 }
